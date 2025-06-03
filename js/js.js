@@ -7,41 +7,41 @@ const products = [
         colors: [
             {
                 name: "Black/White/Red",
-                mainImage: "img/Jordan1/BlackWhiteRed/Jordan-1s-image-1.jpg",
+                mainImage: "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "img/Jordan1/BlackWhiteRed/Jordan-1s-image-2.jpg",
-                    "img/Jordan1/BlackWhiteRed/Jordan-1s-image-3.jpg",
-                    "img/Jordan1/BlackWhiteRed/Jordan-1s-image-4.jpg"
+                    "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-2.jpg",
+                    "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-3.jpg",
+                    "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 9.5, 10, 11.5, 12]
             },
             {
                 name: "Gold/White/Black",
-                mainImage: "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-1.jpg",
+                mainImage: "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-2.jpg",
-                    "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-3.jpg",
-                    "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-4.jpg"
+                    "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-2.jpg",
+                    "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-3.jpg",
+                    "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 10, 10.5, 11, 12]
             },
             {
                 name: "Grey/White/Black",
-                mainImage: "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-1.jpg",
+                mainImage: "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-2.jpg",
-                    "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-3.jpg",
-                    "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-4.jpg"
+                    "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-2.jpg",
+                    "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-3.jpg",
+                    "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 10, 10.5, 11, 12]
             },
             {
                 name: "White/Black",
-                mainImage: "img/Jordan1/WhiteBlack/Jordan-1s-image-1.jpg",
+                mainImage: "../img/Jordan1/WhiteBlack/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "img/Jordan1/WhiteBlack/Jordan-1s-image-2.jpg",
-                    "img/Jordan1/WhiteBlack/Jordan-1s-image-3.jpg",
-                    "img/Jordan1/WhiteBlack/Jordan-1s-image-4.jpg"
+                    "../img/Jordan1/WhiteBlack/Jordan-1s-image-2.jpg",
+                    "../img/Jordan1/WhiteBlack/Jordan-1s-image-3.jpg",
+                    "../img/Jordan1/WhiteBlack/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 10, 10.5, 11, 12]
             }         
