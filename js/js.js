@@ -7,41 +7,41 @@ const products = [
         colors: [
             {
                 name: "Black/White/Red",
-                mainImage: "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-1.jpg",
+                mainImage: "img/Jordan1/BlackWhiteRed/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-2.jpg",
-                    "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-3.jpg",
-                    "../img/Jordan1/BlackWhiteRed/Jordan-1s-image-4.jpg"
+                    "img/Jordan1/BlackWhiteRed/Jordan-1s-image-2.jpg",
+                    "img/Jordan1/BlackWhiteRed/Jordan-1s-image-3.jpg",
+                    "img/Jordan1/BlackWhiteRed/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 9.5, 10, 11.5, 12]
             },
             {
                 name: "Gold/White/Black",
-                mainImage: "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-1.jpg",
+                mainImage: "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-2.jpg",
-                    "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-3.jpg",
-                    "../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-4.jpg"
+                    "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-2.jpg",
+                    "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-3.jpg",
+                    "img/Jordan1/GoldWhiteBlack/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 10, 10.5, 11, 12]
             },
             {
                 name: "Grey/White/Black",
-                mainImage: "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-1.jpg",
+                mainImage: "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-2.jpg",
-                    "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-3.jpg",
-                    "../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-4.jpg"
+                    "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-2.jpg",
+                    "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-3.jpg",
+                    "img/Jordan1/GreyWhiteBlack/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 10, 10.5, 11, 12]
             },
             {
                 name: "White/Black",
-                mainImage: "../img/Jordan1/WhiteBlack/Jordan-1s-image-1.jpg",
+                mainImage: "img/Jordan1/WhiteBlack/Jordan-1s-image-1.jpg",
                 thumbnails: [
-                    "../img/Jordan1/WhiteBlack/Jordan-1s-image-2.jpg",
-                    "../img/Jordan1/WhiteBlack/Jordan-1s-image-3.jpg",
-                    "../img/Jordan1/WhiteBlack/Jordan-1s-image-4.jpg"
+                    "img/Jordan1/WhiteBlack/Jordan-1s-image-2.jpg",
+                    "img/Jordan1/WhiteBlack/Jordan-1s-image-3.jpg",
+                    "img/Jordan1/WhiteBlack/Jordan-1s-image-4.jpg"
                 ],
                 sizes: [9, 10, 10.5, 11, 12]
             }         
@@ -229,7 +229,7 @@ const isProductDetailPage = document.querySelector(".product-detail");
 if (productContainer){
     displayProducts()
 }else if (isProductDetailPage){
-    displayProductDetail()
+    displayProductDetail() // TODO: Suggestion - Move this functionality to the product-detail.js file
 }
 
 
@@ -271,6 +271,9 @@ function displayProductDetail(){
     let selectedSize = selectedColor.sizes[0];
 
     function updateProductDisplay(colorData){
+        // reset thumbnail container to avoid displaying all the thumbnails when selecting a new color
+        thumbnailContainer.innerHTML = "";
+
         if(!colorData.sizes.includes(selectedSize)) {
             selectedSize = colorData.sizes[0];
         }
@@ -281,7 +284,7 @@ function displayProductDetail(){
             const img = document.createElement('img');
             img.src = thumb;
 
-            thumbnailContainer.appendChild(img)
+            thumbnailContainer.appendChild(img) // This is the problem, the thumbnail container was not being reset when selecting a new color causing all the thumbnails to be displayed
 
             img.addEventListener('click', ()=> {
                 mainImageContainer.innerHTML = `<img src = "${thumb}">`;
