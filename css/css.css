@@ -190,8 +190,7 @@ nav .cart-icon .cart-item-count{
 .product-detail .product-img img{
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* Removed the height property to avoid the image being cut off */
 }
 
 .product-detail .thumbnail-list{
@@ -203,6 +202,7 @@ nav .cart-icon .cart-item-count{
 .product-detail .thumbnail-list img{
     height: calc(100% / 4 - 9px);
     cursor: pointer;
+    object-fit: contain; /* This is the key to make the thumbnails fit the container. Removed from the main-img to avoid the image being cut off */
 }
 
 .product-detail .title{
