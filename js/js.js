@@ -265,26 +265,24 @@ function displayProductDetail(){
     const thumbnailContainer = document.querySelector('.thumbnail-list');
     const colorContainer = document.querySelector('.color-options');
     const sizeContainer = document.querySelector('.size-options');
-    //const addToCartBtn = document.querySelector('#add-cart-btn');
+    const addToCartBtn = document.querySelector('#add-cart-btn');
 
     let selectedColor = productData.colors[0];
     let selectedSize = selectedColor.sizes[0];
 
     function updateProductDisplay(colorData){
-        // reset thumbnail container to avoid displaying all the thumbnails when selecting a new color
-        thumbnailContainer.innerHTML = "";
-
         if(!colorData.sizes.includes(selectedSize)) {
             selectedSize = colorData.sizes[0];
         }
 
+        thumbnailContainer.innerHTML = "";
         mainImageContainer.innerHTML = `<img src = "${colorData.mainImage}">`;
         const allThumbnails = [colorData.mainImage].concat(colorData.thumbnails.slice(0, 3));
         allThumbnails.forEach(thumb => {
             const img = document.createElement('img');
             img.src = thumb;
 
-            thumbnailContainer.appendChild(img) // This is the problem, the thumbnail container was not being reset when selecting a new color causing all the thumbnails to be displayed
+            thumbnailContainer.appendChild(img)
 
             img.addEventListener('click', ()=> {
                 mainImageContainer.innerHTML = `<img src = "${thumb}">`;
@@ -328,4 +326,29 @@ function displayProductDetail(){
     descriptioneEl.textContent = productData.description;
 
     updateProductDisplay(selectedColor);
+
+    addToCartBtn.addEventListener("click", ()=>{
+        addToCart(productData, selectedColor, SelectedSize)
+    });
+}
+
+function addToCart(product, color, size){
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || []
+    
+    const existingItem =  cart.find(item => item.id === product.id && item.color === color.name && item.size === size);
+
+    if (existingItem){
+        existingItem.quantity += 1;
+    }else{
+    cart.push({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: color.mainImage,
+        color: color.name,
+        size: size,
+        quantity: 1
+    })
+    }
+    sessionStorage.setItem("cart", JSON.stringify(cart));
 }

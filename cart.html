@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="css/css.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+        <title>Cart</title>
+    </head>   
+
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href ="#">
+                        <i class="ri-user-line"></i>
+                        Log In  
+                    </a>
+                </li>
+                <li>
+                    <a href ="cart.html" class ="cart-icon">
+                        <i class="ri-shopping-bag-line"></i>
+                        <span class ="cart-item-count"></span>
+                        Checkout
+                        
+                    </a>
+                </li>
+            </ul>
+            </nav>
+        <div class = "cart"> 
+            <div class="cart-header">
+                <span>Products</span>
+                <span>Price</span>
+                <span>Quantity</span>
+                <span>Total</span>
+                <span>Remove</span>
+            </div>
+            <div class = "cart-items">
+                <div class = "each-item">
+                    <div class = "product">
+                        <img src="../img/Jordan1/BlackWhiteRed/Jordan-1s-image-1.jpg">
+                        <div class ="size-color-box">
+                            <span class = "size">10</span>
+                            <span class= "color">Red and black</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="price"> $200 </span>
+                <div class="quantity">
+                    <input type="number" value="10" min="1">
+                </div>
+                <span class ="total-price">$200</span>
+                <button class="remove"><i class="ri-close-line"></i></button>
+            </div>
+        </div>
+        <div class = "cart-total">
+            <h3>Cart Total</h3>
+            <p>Subtotal <span class ="subtotal">$0</span></p>
+            <p>Delivery Fee <span class = "Free"></span></p>
+            <p>Grand Total <span class="grand-total">$0</span></p>
+            <button class="btn"> Proceed to Checkout</button>
+        </div>
+
+        <script src="js/js.js"></script>
+    </body>
+
+</html>
