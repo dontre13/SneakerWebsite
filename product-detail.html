@@ -1,28 +1,33 @@
 <!doctype html>
 <html>
     <head>
+        <script src="js/product-detail.js"></script>
         <link rel="stylesheet" href="css/css.css">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
         <title>Product Detail</title>
     </head>   
     <body>
-        <nav>
-            <ul>
-                <li>
-                    <a href ="#">
-                        <i class="ri-user-line"></i>
-                        Log In  
-                    </a>
-                </li>
-                <li>
-                    <a href ="cart.html" class ="cart-icon">
-                        <i class="ri-shopping-bag-line"></i>
-                        <span class ="cart-item-count"></span>
-                        Checkout
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <header>
+            <div class = "darkLogo"> <a href ="index.html">Your | Logo</a> </div>
+            <nav class = "darkNav">
+                <ul>
+                    <li>
+                        <a href ="#">
+                            <i class="ri-user-line"></i>
+                            Log In  
+                        </a>
+                    </li>
+                    <li>
+                        <a href ="cart.html" class ="cart-icon">
+                            <i class="ri-shopping-bag-line"></i>
+                            <span class ="cart-item-count"></span>
+                            Cart
+                            
+                        </a>
+                    </li>
+                </ul>
+            </nav>                
+        </header>
         <div class = "product-detail">
             <div class = "product-img">
                 <div class = "thumbnail-list">
@@ -33,9 +38,12 @@
                     <img src = "img/Jordan1/BlackWhiteRed/Jordan-1s-image-4.jpg">  -->
                 
                 </div>
-                <div class="main-img">
+                <div class="main-img-wrapper">
+                    <div class="main-img">
                     <!-- <img src = "img/Jordan1/BlackWhiteRed/Jordan-1s-image-1.jpg"> -->
                 </div>
+                </div>
+                
             </div>
             <div class = "product-info">
                 <h2 class="title"></h2>
@@ -65,19 +73,16 @@
                 <div class = "color-selection">
                     <p>Select Color</p>
                     <div class = "color-options">
-                        
                             <!-- <img src ="../img/Jordan1/GoldWhiteBlack/Jordan-1s-image-1.jpg" class = "selected">
                             <img src="../img/Jordan1/GreyWhiteBlack/Jordan-1s-image-1.jpg">
-                            <img src="../img/Jordan1/WhiteBlack/Jordan-1s-image-1.jpg"> -->
-                    
-                        
+                            <img src="../img/Jordan1/WhiteBlack/Jordan-1s-image-1.jpg"> --> 
                     </div>
                 </div>
                 <button class="btn" id ="add-cart-btn">Add to cart</button>
             </div>          
         </div>
         <!-- TODO: Suggestion - Separate the js file for the product detail page to avoid conflict with the main page and keep the code clean -->
-        <!-- <script src="js/product-detail.js"></script> -->
-        <script src="js/js.js"></script>
+        
+        <script type ="module" src="js/js.js"></script>
     </body>
 </html>

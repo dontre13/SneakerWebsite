@@ -7,8 +7,10 @@
 
 html{
     scroll-behavior: smooth;
+    
 }
 
+/*********** Index Page************/
 .fa-solid{
     color: white;
     font-size: 30px;
@@ -33,21 +35,50 @@ header{
         align-items: center;
         padding: 20px 8%;
         transition: 0.5s ease;
+        position: fixed;
+        transition: 0.6s;
 
 }
-header h1{
-    font-size: 4em;
+
+header.sticky{
+    padding: 20px 8%;
+    background: #fff;
+}
+
+header.sticky .logo,
+header.sticky ul li a{
+    color: #000;
+}
+
+header .logo{
+    font-size: 2em;
     color: white;
+    font-weight: 700;
 }
 
+header .darkLogo a{
+    font-size: 2em;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+}
 
+header .darkNav a{
+    color: black;
+    text-decoration: none;
+    transition: .15s;
+    &:hover{
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+}
 nav ul li{
     list-style: none;
     display: inline-block;
     margin-left: 40px;
 }
 
-nav ul a{
+.video-container nav ul a{
     text-decoration: none;
     color: white;
     transition: .15s;
@@ -61,6 +92,7 @@ nav ul a{
 nav .cart-icon{
     position: relative;
     display: flex;
+
 }
 
 nav .cart-icon .cart-item-count{
@@ -73,9 +105,11 @@ nav .cart-icon .cart-item-count{
     border-radius: 50%;
     font-size: 12px;
     color: white;
-    line-height: 20px;
+    line-height: 16px;
     text-align: center;
     display: none;
+    align-items: center; 
+    
 }
 
 #content{
@@ -115,7 +149,7 @@ nav .cart-icon .cart-item-count{
     width: 100%
 }
 .footer{
-    margin: 100px auto 100px 0;
+    margin: 200px auto 15px 0;
     text-align: center;
 }
 
@@ -154,11 +188,13 @@ nav .cart-icon .cart-item-count{
     height: auto;
     aspect-ratio: 16/9;
     object-fit: cover;
-    transition: 0.5s
+    transition: 0.5s;
+    z-index: -1;
 }
 
 #product-collection .img-box:hover img{
-    transform: scale(1.1)
+    transform: scale(1.1);
+    z-index: -1;
 }
 
 #product-collection .title{
@@ -204,6 +240,13 @@ nav .cart-icon .cart-item-count{
     height: calc(100% / 4 - 9px);
     cursor: pointer;
     object-fit: contain; /* This is the key to make the thumbnails fit the container. Removed from the main-img to avoid the image being cut off */
+}
+
+.main-img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .product-detail .title{
@@ -271,7 +314,7 @@ nav .cart-icon .cart-item-count{
 }
 
 
-/*********** shopping cart page ************/
+/*********** Shopping cart page ************/
 .cart{
     padding: 110px 9% 30px;
 }
@@ -316,6 +359,7 @@ nav .cart-icon .cart-item-count{
     align-items: center;
     gap: 10px;
     margin-top: 10px;
+    
 }
 
 .each-item .size{
@@ -378,6 +422,8 @@ nav .cart-icon .cart-item-count{
     margin: 30px 0 0 auto;
 }
 
+/*********** Responsive design ************/
+
 @media (min-aspect-ratio:16/9){
     .background-clip{
         width: 100%;
@@ -389,6 +435,349 @@ nav .cart-icon .cart-item-count{
     .background-clip{
         width: auto;
         height: 100%;
+    }
+}
+
+
+
+
+@media screen and (max-width: 940px) {
+    .cart-header {
+        display: none;
+    }
+
+    .product-detail{
+        grid-template-columns: 1fr;
+        padding: 100px 5% 30px;
+        
+    }
+
+    .main-img-wrapper{
+        max-width: 80%;
+        margin: 0 auto;
+        z-index: -1;
+    }
+
+    .product-detail .product-img{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .product-detail .thumbnail-list{
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        
+    }
+
+    .product-detail .thumbnail-list img{
+        height: 100px;
+        width: auto;
+        object-fit: cover;
+    }
+    
+    .product-detail .product-img .main-img{
+        order: 1;
+        margin: auto;
+    }
+
+    .product-detail .product-img .thumbnail-list{
+        order: 2;
+    }
+
+    .each-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+
+    .each-item .product {
+        order: 1;
+    }
+
+    .each-item .price {
+        order: 2;
+    }
+
+    .each-item .quantity {
+        order: 3;
+    }
+
+    .each-item .remove {
+        order: 4;
+    }
+
+    .each-item .total-price {
+        display:none;
+    }
+
+    .each-item .product {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .each-item img {
+        width: 150px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .each-item .item-detail {
+        flex: 1;
+    }
+
+    .each-item .size{
+        padding: 0;
+        font-size: 16px;
+        background-color: white;
+        margin-bottom: 5px;
+}
+
+    .each-item .size-color-box {
+        flex-direction: column;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    
+
+
+
+
+    .each-item .price,
+    .each-item .quantity,
+    .each-item .total-price,
+    .each-item .remove {
+        text-align: left;
+        width: 100%;
+        margin: 4px 0;
+    }
+
+    .each-item .quantity input {
+        width: 100%;
+        max-width: 100px;
+    }
+
+    .cart-total {
+        width: 100%;
+        padding: 0;
+        margin: 30px 0 0;
+    }
+
+    .cart-total .btn {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .each-item span.price::before{
+        content: "Price: ";
+        font-size: 1rem;
+        color: #333;
+        font-weight: bolder;
+    }
+    
+    .each-item span.total-price::before{
+        content: "Total: ";
+        font-size: 1rem;
+        color: #333;
+        font-weight: bolder;
+    }
+
+    .each-item .remove {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        width: 100%;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .each-item .remove::after {
+        content: "Remove";
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .cart-header {
+        display: none;
+    }
+
+    .product-detail{
+        grid-template-columns: 1fr;
+        padding: 100px 5% 30px;
+    }
+
+    .product-detail .product-img{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .product-detail .thumbnail-list{
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        
+    }
+
+    .product-detail .thumbnail-list img{
+        height: 100px;
+        width: auto;
+        object-fit: cover;
+    }
+
+    
+
+    .product-detail .product-img .thumbnail-list{
+        order: 2;
+    }
+
+    .each-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+
+    .each-item .product {
+        order: 1;
+    }
+
+    .each-item .price {
+        order: 2;
+    }
+
+    .each-item .quantity {
+        order: 3;
+    }
+
+    .each-item .remove {
+        order: 4;
+    }
+
+    .each-item .total-price {
+        display:none;
+    }
+
+    .each-item .product {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .each-item img {
+        width: 150px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .each-item .item-detail {
+        flex: 1;
+    }
+
+    .each-item .size-color-box {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    
+
+
+
+
+    .each-item .price,
+    .each-item .quantity,
+    .each-item .total-price,
+    .each-item .remove {
+        text-align: left;
+        width: 100%;
+        margin: 4px 0;
+    }
+
+    .each-item .quantity input {
+        width: 100%;
+        max-width: 100px;
+    }
+
+    .cart-total {
+        width: 100%;
+        padding: 0;
+        margin: 30px 0 0;
+    }
+
+    .cart-total .btn {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .each-item span.price::before{
+        content: "Price: ";
+        font-size: 1rem;
+        color: #333;
+        font-weight: bolder;
+    }
+    
+    .each-item span.total-price::before{
+        content: "Total: ";
+        font-size: 1rem;
+        color: #333;
+        font-weight: bolder;
+    }
+
+    .each-item .remove {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        width: 100%;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .each-item .remove::after {
+        content: "Remove";
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        padding-top: 10px;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    .each-item img {
+        width: 50px;
+    }
+
+    .cart-total p,
+    .cart-total h3 {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
 
