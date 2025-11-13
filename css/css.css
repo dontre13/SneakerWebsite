@@ -75,7 +75,7 @@ header .darkNav a{
 nav ul li{
     list-style: none;
     display: inline-block;
-    margin-left: 40px;
+    margin: 0 20px;
 }
 
 .video-container nav ul a{
@@ -141,7 +141,7 @@ nav .cart-icon .cart-item-count{
 .background-clip{
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     z-index: -1;
 }
 
@@ -763,7 +763,7 @@ nav .cart-icon .cart-item-count{
     }
 
     nav ul li {
-        margin-left: 20px;
+        margin: 0 5px;
     }
 
     .each-item img {
